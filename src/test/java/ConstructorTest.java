@@ -32,8 +32,9 @@ public class ConstructorTest {
         //клик на «Булки»
         objConstructor.clickBunsLink();
 
-        String finishText = objConstructor.bunsText();
-        Assert.assertEquals("Булки", finishText);
+//        String finishText = objConstructor.bunsText();
+        Assert.assertTrue(objConstructor.bunsIsDisplayed());
+
     }
 
     @Test
@@ -47,8 +48,8 @@ public class ConstructorTest {
         //клик на «Соусы»
         objConstructor.clickSaucesLink();
 
-        String finishText = objConstructor.saucesText();
-        Assert.assertEquals("Соусы", finishText);
+        //String finishText = objConstructor.saucesText();
+        Assert.assertTrue(objConstructor.saucesIsDisplayed());
     }
 
     @Test
@@ -62,8 +63,8 @@ public class ConstructorTest {
         //клик на «Начинки»
         objConstructor.clickToppingsLink();
 
-        String finishText = objConstructor.toppingsText();
-        Assert.assertEquals("Начинки", finishText);
+        //String finishText = objConstructor.toppingsText();
+        Assert.assertTrue(objConstructor.toppingsIsDisplayed());
     }
 
     @After

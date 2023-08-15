@@ -22,9 +22,9 @@ public class Constructor {
     private final By linkToppings = By.xpath("//span[text()='Начинки']");
 
     //локаторы заголовков разделов в меню
-    private final By h2Buns = By.xpath("//h2[text()='Булки']");
-    private final By h2Sauces = By.xpath("//h2[text()='Соусы']");
-    private final By h2Toppings = By.xpath("//h2[text()='Начинки']");
+    private final By spanBuns = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Булки']");
+    private final By spanSauces = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Соусы']");
+    private final By spanToppings = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Начинки']");
 
     public void waitForLoadMainPage(){
         new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -46,15 +46,18 @@ public class Constructor {
         driver.findElement(linkToppings).click();
     }
 
-    public String bunsText() {
-        return driver.findElement(h2Buns).getText();
+    public boolean bunsIsDisplayed() {
+        return driver.findElement(spanBuns).isDisplayed();
     }
 
-    public String saucesText() {
-        return driver.findElement(h2Sauces).getText();
+    public boolean saucesIsDisplayed() {
+        return driver.findElement(spanSauces).isDisplayed();
     }
 
-    public String toppingsText() {
-        return driver.findElement(h2Toppings).getText();
+    public boolean toppingsIsDisplayed() {
+        return driver.findElement(spanToppings).isDisplayed();
     }
+
+
+
 }
